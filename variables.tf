@@ -58,3 +58,32 @@ variable "ssh_location" {
   description = "The IP address range that can SSH into the instances"
   type        = string
 }
+
+# RDS Variables
+
+variable "database_snapshot_identifier" {
+  description = "The ARN of the RDS snapshot to restore from"
+  type        = string
+  default     = "arn:aws:rds:eu-west-2:651271204467:snapshot:dev-rds-db-snapshot"
+}
+
+# database instance class
+variable "database_instance_class" {
+  description = "The class of the RDS instance"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+# database instance identifier
+variable "database_instance_identifier" {
+  description = "The identifier for the RDS instance"
+  type        = string
+  default     = "dev-rds-db"
+}
+
+#multi_az_deployment
+variable "multi_az_deployment" {
+  description = "Enable Multi-AZ deployment for high availability"
+  type        = bool
+  default     = false
+}
