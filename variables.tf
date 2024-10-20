@@ -87,3 +87,12 @@ variable "multi_az_deployment" {
   type        = bool
   default     = false
 }
+
+
+# Application Load Balancer Variables
+
+variable "ssl_certificate_arn" {
+  description = "The ARN of the SSL certificate for the ALB"
+  type        = string
+  default     = "arn:aws:acm:eu-west-2:651271204467:certificate/00956be5-83c9-495d-a19e-fc80562cd05d"  # Replace with your actual certificate ARN
+}
