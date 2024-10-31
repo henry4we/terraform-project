@@ -90,16 +90,45 @@ variable "multi_az_deployment" {
 
 
 # Application Load Balancer Variables
-
+#SSL certificate
 variable "ssl_certificate_arn" {
   description = "The ARN of the SSL certificate for the ALB"
   type        = string
-  default     = "arn:aws:acm:eu-west-2:651271204467:certificate/00956be5-83c9-495d-a19e-fc80562cd05d"  # Replace with your actual certificate ARN
+  default     = "arn:aws:acm:eu-west-2:651271204467:certificate/00956be5-83c9-495d-a19e-fc80562cd05d" # Replace with your actual certificate ARN
 }
 
-
+# SNS notifications
 variable "operator_email" {
   description = "The email address to receive SNS notifications."
   type        = string
   default     = "henry4we2008@gmail.com"
+}
+
+# Auto scaling group variable
+
+#Launch Template Name
+variable "launch_template_name" {
+  description = "The name of the launch template for the Auto Scaling group."
+  type        = string
+  default     = "dev-launch-template"
+}
+
+# AMI ID
+variable "ami_id" {
+  description = "The ID of the AMI to use for the instances."
+  type        = string
+  default     = "ami-0190cc606dff9fde6"
+}
+#Instance Type
+variable "instance_type" {
+  description = "The type of instance to use for the Auto Scaling group."
+  type        = string
+  default     = "t2.micro"
+}
+
+#Key Pair Name
+variable "key_pair_name" {
+  description = "The name of the existing EC2 key pair."
+  type        = string
+  default     = "myKey"
 }

@@ -6,7 +6,7 @@ resource "aws_db_subnet_group" "database_subnet_group" {
   description = "subnets for database instance"
 
   tags = {
-    Name = "Database Subnets"
+    Name = "Database Subnetss"
   }
 }
 
